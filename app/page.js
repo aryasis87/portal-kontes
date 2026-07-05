@@ -14,7 +14,7 @@ export default function PortalKontes() {
       {/* Navbar */}
       <header className="sticky top-0 z-40 border-b border-arang/15 bg-galeri/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-          <a href="#" className="flex items-center gap-2.5 font-display text-xl font-semibold">
+          <a href="/" className="flex items-center gap-2.5 font-display text-xl font-semibold">
             <span className="plakat grid h-9 w-9 place-items-center rounded"><Trophy size={16} /></span>
             PortalKontes
           </a>
@@ -65,13 +65,15 @@ export default function PortalKontes() {
                     transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
                     className="group text-center"
                   >
-                    <div className="frame">
-                      <div className="frame-mat">
-                        <div className="relative aspect-[16/11] overflow-hidden">
-                          <Image src={e.image} alt={`Entri ${e.name}`} fill sizes="(max-width:640px) 100vw, 25vw" className="object-cover object-top" priority={bi === 0 && i < 2} />
+                    <a href={`https://${e.folder}.pintuweb.com`} target="_blank" rel="noopener noreferrer" aria-label={`Buka entri ${e.name}`} className="block">
+                      <div className="frame transition-transform duration-300 group-hover:-translate-y-1.5">
+                        <div className="frame-mat">
+                          <div className="relative aspect-[16/11] overflow-hidden">
+                            <Image src={e.image} alt={`Entri ${e.name}`} fill sizes="(max-width:640px) 100vw, 25vw" className="object-cover object-top" priority={bi === 0 && i < 2} />
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                     {/* Plakat */}
                     <div className="plakat mx-auto -mt-3 w-fit rounded px-4 py-1.5 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em]">Entri No. {e.no}</p>
