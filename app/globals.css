@@ -1,35 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-display: var(--font-zilla), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --color-galeri: #f2f0eb;
+  --color-arang: #23211d;
+  --color-kuningan: #a8852e;
+  --color-mutedk: #77726a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: #ffffff;
-  color: #1e293b; /* Tailwind slate-800, gelap tapi adem */
-  font-family: 'Inter', sans-serif;
-  overscroll-behavior-y: contain;
+  background-color: var(--color-galeri);
+  color: var(--color-arang);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+/* Bingkai galeri: frame gelap + mat putih */
+.frame { background: var(--color-arang); padding: 10px; box-shadow: 0 18px 40px -18px rgba(35, 33, 29, 0.5); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.frame-mat { background: #fff; padding: 10px; }
+.group:hover .frame { transform: translateY(-6px); box-shadow: 0 28px 50px -20px rgba(168, 133, 46, 0.45); }
+
+/* Plakat kuningan */
+.plakat {
+  background: linear-gradient(160deg, #cfa94d, #a8852e 60%, #8a6c22);
+  color: #fff8e8; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 8px -3px rgba(138, 108, 34, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+
+/* Dinding galeri bertekstur halus */
+.wall { background-image: radial-gradient(rgba(35, 33, 29, 0.04) 1px, transparent 1px); background-size: 20px 20px; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.6s ease-out both; }
+
+:focus-visible { outline: 3px solid var(--color-kuningan); outline-offset: 3px; }
