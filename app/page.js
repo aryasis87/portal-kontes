@@ -1,23 +1,38 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Trophy, ArrowDown, MessageCircle, Gavel, Landmark } from 'lucide-react';
+import { Trophy, ArrowDown, MessageCircle, Gavel, Landmark, ChevronDown } from 'lucide-react';
 import { briefs } from './components/templates-data';
 
 const WA = 'https://wa.me/6281339908765?text=Halo%2C%20saya%20ingin%20mengadakan%20kontes%20desain%20web%20untuk%20brand%20saya';
 
+const TANYA = [
+  { q: 'Apa untungnya kontes dibanding pesan satu desain?', a: 'Kamu melihat beberapa interpretasi nyata atas brief yang sama — bukan satu taruhan. Konsep yang menang adalah yang benar-benar paling pas di matamu, bukan sekadar yang pertama jadi.' },
+  { q: 'Berapa konsep yang saya terima?', a: 'Umumnya 3–5 konsep website utuh yang bisa diklik dan dijelajahi, bukan sekadar gambar mockup. Jumlah pastinya menyesuaikan skala brief dan kesepakatan di awal.' },
+  { q: 'Berapa lama prosesnya?', a: 'Brief singkat berjalan sekitar 5–10 hari kerja dari brief final sampai semua entri siap dinilai. Setelah kamu memilih juara, pemolesan final memakan 2–3 hari.' },
+  { q: 'Bagaimana jika tidak ada konsep yang saya suka?', a: 'Feedback-mu jadi arah revisi: konsep terdekat kami rombak sesuai catatanmu. Prinsip kami sederhana — kontes selesai ketika ada karya yang memenangkan hatimu.' },
+  { q: 'Konsep yang kalah jadi milik siapa?', a: 'Konsep juara beserta source code menjadi milikmu penuh. Konsep lain tetap arsip galeri kami — bisa kamu tebus terpisah jika ternyata ingin memakainya juga.' },
+];
+
 export default function PortalKontes() {
   const total = briefs.reduce((n, b) => n + b.entri.length, 0);
+  const [buka, setBuka] = useState(0);
 
   return (
-    <div className="wall min-h-screen">
+    <div id="top" className="wall min-h-screen">
       {/* Navbar */}
       <header className="sticky top-0 z-40 border-b border-arang/15 bg-galeri/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-          <a href="/" className="flex items-center gap-2.5 font-display text-xl font-semibold">
+          <a href="#top" className="flex items-center gap-2.5 font-display text-xl font-semibold">
             <span className="plakat grid h-9 w-9 place-items-center rounded"><Trophy size={16} /></span>
             PortalKontes
           </a>
+          <div className="hidden items-center gap-6 text-sm font-semibold text-mutedk md:flex" role="navigation" aria-label="Navigasi">
+            <a href="#galeri" className="transition hover:text-kuningan">Galeri</a>
+            <a href="#carakerja" className="transition hover:text-kuningan">Cara Kerja</a>
+            <a href="#tanya" className="transition hover:text-kuningan">Tanya Juri</a>
+          </div>
           <a href={WA} target="_blank" rel="noopener noreferrer" className="rounded bg-arang px-5 py-2 text-sm font-bold text-galeri transition hover:bg-kuningan">
             Adakan Kontes
           </a>
@@ -90,7 +105,7 @@ export default function PortalKontes() {
       </section>
 
       {/* Cara kerja */}
-      <section className="border-t border-arang/10 bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <section id="carakerja" className="scroll-mt-24 border-t border-arang/10 bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-center font-display text-3xl font-semibold md:text-4xl">Bagaimana kontes berjalan</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -109,6 +124,34 @@ export default function PortalKontes() {
         </div>
       </section>
 
+      {/* Tanya juri (FAQ) */}
+      <section id="tanya" className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <p className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-kuningan"><Gavel size={14} /> Tanya Juri</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold md:text-4xl">Sebelum palu <span className="italic text-kuningan">diketuk</span></h2>
+          </div>
+          <div className="mt-10 space-y-3">
+            {TANYA.map((t, i) => {
+              const open = buka === i;
+              return (
+                <div key={t.q} className={`border-l-4 bg-white shadow-sm transition ${open ? 'border-kuningan shadow-md' : 'border-arang/15'}`}>
+                  <button onClick={() => setBuka(open ? -1 : i)} aria-expanded={open} className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left">
+                    <span className="font-display text-lg font-semibold leading-snug">{t.q}</span>
+                    <ChevronDown size={17} className={`shrink-0 text-kuningan transition-transform ${open ? 'rotate-180' : ''}`} />
+                  </button>
+                  {open && (
+                    <div className="border-t border-arang/10 px-6 py-4">
+                      <p className="text-sm leading-relaxed text-mutedk">{t.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-arang px-4 py-16 text-center text-galeri sm:px-6">
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-xl">
@@ -121,8 +164,34 @@ export default function PortalKontes() {
         </motion.div>
       </section>
 
-      <footer className="bg-arang px-4 py-5 text-center text-xs text-galeri/40">
-        © {new Date().getFullYear()} PortalKontes · Sanzystore Dev — biar karya yang bicara.
+      <footer className="border-t border-galeri/10 bg-arang px-4 pb-6 pt-10 text-galeri/60">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-center sm:grid-cols-3 sm:text-left">
+          <div>
+            <p className="flex items-center justify-center gap-2 font-display text-lg font-semibold text-galeri sm:justify-start">
+              <span className="plakat grid h-8 w-8 place-items-center rounded"><Trophy size={14} /></span>
+              PortalKontes
+            </p>
+            <p className="mt-2 text-sm leading-relaxed">Galeri entri kontes desain web — satu brief, banyak cara memenangkannya.</p>
+          </div>
+          <nav aria-label="Tautan footer" className="text-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-kuningan">Ruang Galeri</p>
+            <ul className="mt-3 space-y-2">
+              <li><a href="#galeri" className="transition hover:text-galeri">Galeri Entri</a></li>
+              <li><a href="#carakerja" className="transition hover:text-galeri">Cara Kontes Berjalan</a></li>
+              <li><a href="#tanya" className="transition hover:text-galeri">Tanya Juri</a></li>
+            </ul>
+          </nav>
+          <div className="text-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-kuningan">Hubungi</p>
+            <ul className="mt-3 space-y-2">
+              <li><a href={WA} target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">WhatsApp +62 813 3990 8765</a></li>
+              <li><a href="https://pintuweb.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">pintuweb.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <p className="mt-10 border-t border-galeri/10 pt-5 text-center text-xs text-galeri/40">
+          © {new Date().getFullYear()} PortalKontes · bagian dari PintuWeb — biar karya yang bicara.
+        </p>
       </footer>
     </div>
   );
