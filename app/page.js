@@ -80,7 +80,7 @@ export default function PortalKontes() {
                     transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
                     className="group text-center"
                   >
-                    <a href={`https://${e.folder}.pintuweb.com`} target="_blank" rel="noopener noreferrer" aria-label={`Buka entri ${e.name}`} className="block">
+                    <a href={e.url} target="_blank" rel="noopener noreferrer" aria-label={`Buka entri ${e.name}`} className="block">
                       <div className="frame transition-transform duration-300 group-hover:-translate-y-1.5">
                         <div className="frame-mat">
                           <div className="relative aspect-[16/11] overflow-hidden">
