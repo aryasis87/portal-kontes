@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PortalKontes — Galeri Entri Kontes Desain Web
 
-## Getting Started
+PortalKontes: galeri entri kontes desain web — beberapa konsep untuk satu brief, dinilai berdampingan seperti di ruang juri.
 
-First, run the development server:
+**Demo live:** https://portal-kontes.vercel.app
+
+![Tangkapan layar PortalKontes](public/og.jpg)
+
+> Katalog demo milik PintuWeb. Setiap kartu menautkan ke demo live yang bisa dicoba.
+
+## Konsep
+
+"Ruang Juri": galeri entri kontes desain dengan bingkai galeri, mat putih, dan plakat kuningan untuk setiap entri.
+
+## Varian yang dipamerkan (9)
+
+- [EthyleneAbsorber](https://absorber-dickson.vercel.app)
+- [EthyleneAbsorber](https://absorber-divine.vercel.app)
+- [EthyleneAbsorber](https://absorber-premium.vercel.app)
+- [EthyleneAbsorber](https://absorber-segar.vercel.app)
+- [Positive Crave](https://crave-amber-mu.vercel.app)
+- [Positive Crave](https://crave-close.vercel.app)
+- [Positive Crave](https://crave-grace.vercel.app)
+- [Positive Crave](https://crave-lumen.vercel.app)
+- [Positive Crave](https://crave-noir.vercel.app)
+
+## Halaman
+
+`/`
+
+## Teknologi
+
+- Next.js 15.5 (App Router) dan React 19
+- Tailwind CSS v4
+- JavaScript
+- Framer Motion, Lucide (ikon)
+- Font: Zilla Slab, Inter (next/font)
+- SEO: metadata per halaman, Open Graph, JSON-LD, sitemap.xml, dan robots.txt
+
+## Menjalankan secara lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000. Untuk build produksi: `npm run build` lalu `npm start`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dibuat oleh [PintuWeb](https://pintuweb.com), jasa pembuatan website.
