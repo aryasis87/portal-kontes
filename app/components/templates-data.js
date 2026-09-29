@@ -1,27 +1,67 @@
+// Tiap entri punya identitas sendiri (bukan sekadar palet) dan halaman dalam yang khas.
+// Thumbnail diambil dari situs live: public/images/entri/<folder>.webp (1600x1100, 16:11).
 export const briefs = [
   {
     id: 'absorber',
     klien: 'PT Dickson Synergy',
     proyek: 'EthyleneAbsorber',
-    deskripsi: 'Landing page produk penjaga kesegaran buah untuk pasar ekspor — harus terasa segar, tepercaya, dan meyakinkan distributor.',
+    deskripsi: 'Situs produk penjaga kesegaran buah untuk pasar ekspor — harus terasa segar, tepercaya, dan meyakinkan distributor. Fakta yang sama (BPOM, 1 sachet untuk 1–2 m³, efektif 30 hari), empat cara bercerita.',
     entri: [
-      { no: '01', name: 'Konsep Segar', folder: 'absorber-segar', url: 'https://absorber-segar.vercel.app', description: 'Hijau berani dengan badge mengambang — energi kesegaran di pandangan pertama.', image: '/images/a1.png' },
-      { no: '02', name: 'Konsep Premium', folder: 'absorber-premium', url: 'https://absorber-premium.vercel.app', description: 'Bersih dan meyakinkan — menonjolkan kualitas premium dan kealamian bahan.', image: '/images/a2.png' },
-      { no: '03', name: 'Konsep Divine', folder: 'absorber-divine', url: 'https://absorber-divine.vercel.app', description: 'Elegan dengan sentuhan italic — "freshness reimagined" untuk kesan eksklusif.', image: '/images/a3.png' },
-      { no: '04', name: 'Konsep Korporat', folder: 'absorber-dickson', url: 'https://absorber-dickson.vercel.app', description: 'Mengedepankan kredibilitas PT Dickson Synergy sebagai penyedia solusi industri.', image: '/images/a4.png' },
+      {
+        no: '01', name: 'Konsep Segar', identitas: 'Pasar Pagi', folder: 'absorber-segar', url: 'https://absorber-segar.vercel.app',
+        description: 'Gaya poster pedagang pasar: stiker miring, hijau berani, dan bahasa penjual buah. Ada kamus 12 buah dan hitungan sachet untuk lapak.',
+        halaman: [['/kamus-buah', 'Kamus buah'], ['/hitung', 'Hitung sachet']],
+      },
+      {
+        no: '02', name: 'Konsep Premium', identitas: 'Etalase', folder: 'absorber-premium', url: 'https://absorber-premium.vercel.app',
+        description: 'Butik tanpa hiasan — kisi garis rambut dan angka besar. Tiap produk dipajang seperti di vitrin, ditemani cerita kasus pelanggan.',
+        halaman: [['/koleksi', 'Koleksi'], ['/catatan', 'Cerita kasus']],
+      },
+      {
+        no: '03', name: 'Konsep Divine', identitas: 'Plate Botani', folder: 'absorber-divine', url: 'https://absorber-divine.vercel.app',
+        description: 'Herbarium: delapan pelat buah bernama Latin lengkap dengan suhu simpan, kurva kesegaran, dan esai tentang buah yang terus bernapas.',
+        halaman: [['/herbarium', 'Herbarium'], ['/jurnal', 'Jurnal']],
+      },
+      {
+        no: '04', name: 'Konsep Korporat', identitas: 'Lembar Data', folder: 'absorber-dickson', url: 'https://absorber-dickson.vercel.app',
+        description: 'Bahasa gambar teknik untuk klaim yang bisa diaudit: lembar data per produk, kalkulator dosis kontainer, dan catatan teknis bernomor.',
+        halaman: [['/produk', 'Lembar data'], ['/catatan-teknis', 'Catatan teknis']],
+      },
     ],
   },
   {
     id: 'crave',
     klien: 'Positive Crave',
     proyek: 'Intimacy Wellness Brand',
-    deskripsi: 'Landing page brand keintiman pasangan — harus dewasa tanpa vulgar, hangat, dan membuat pengunjung merasa aman.',
+    deskripsi: 'Situs toko brand keintiman pasangan — harus dewasa tanpa vulgar, hangat, dan membuat pengunjung merasa aman. Katalog yang sama, lima sudut pandang tentang apa yang paling dibutuhkan pembeli.',
     entri: [
-      { no: '01', name: 'Konsep Noir', folder: 'crave-noir', url: 'https://crave-noir.vercel.app', description: 'Hitam pekat dengan aksen pink neon — berani, playful, dan percaya diri.', image: '/images/c1.png' },
-      { no: '02', name: 'Konsep Amber', folder: 'crave-amber', url: 'https://crave-amber-mu.vercel.app', description: 'Kehangatan amber di kegelapan — passion yang membara namun terkendali.', image: '/images/c2.png' },
-      { no: '03', name: 'Konsep Grace', folder: 'crave-grace', url: 'https://crave-grace.vercel.app', description: 'Serif anggun di atas ivory — sensualitas dengan sofistikasi yang halus.', image: '/images/c3.png' },
-      { no: '04', name: 'Konsep Lumen', folder: 'crave-lumen', url: 'https://crave-lumen.vercel.app', description: 'Terang dan jujur — keintiman yang dimulai dari rasa aman, bukan gelap.', image: '/images/c4.png' },
-      { no: '05', name: 'Konsep Close', folder: 'crave-close', url: 'https://crave-close.vercel.app', description: 'Biru bersih ala wellness modern — edukasi dan eksplorasi tanpa canggung.', image: '/images/c5.png' },
+      {
+        no: '01', name: 'Konsep Noir', identitas: 'Tanpa Label', folder: 'crave-noir', url: 'https://crave-noir.vercel.app',
+        description: 'Hitam dengan satu aksen neon, berpusat pada privasi: koleksi dipilih per situasi, dan satu halaman memperlihatkan apa yang dilihat kurir.',
+        halaman: [['/pengiriman', 'Pengiriman'], ['/jurnal', 'Arsip']],
+      },
+      {
+        no: '02', name: 'Konsep Amber', identitas: 'Cahaya Lilin', folder: 'crave-amber', url: 'https://crave-amber-mu.vercel.app',
+        description: 'Tiap barang punya tingkat nyala 1–10, dan penggeser meredupkan koleksi. Kuisnya jujur menyarankan menunda bila obrolannya belum ada.',
+        halaman: [['/koleksi', 'Koleksi'], ['/panduan', 'Kuis panduan']],
+      },
+      {
+        no: '03', name: 'Konsep Grace', identitas: 'Amplop Sutra', folder: 'crave-grace', url: 'https://crave-grace.vercel.app',
+        description: 'Serif anggun di atas ivory: koleksi disusun seperti susunan acara, penyusun hadiah dengan kartu, dan surat bersegel lilin.',
+        halaman: [['/hadiah', 'Susun hadiah'], ['/jurnal', 'Surat']],
+      },
+      {
+        no: '04', name: 'Konsep Lumen', identitas: 'Ruang Terang', folder: 'crave-lumen', url: 'https://crave-lumen.vercel.app',
+        description: 'Terang dan jujur: panel Fakta Produk ala label gizi, tabel perbandingan, dan kamus 19 istilah yang sering bikin ragu.',
+        halaman: [['/kamus', 'Kamus'], ['/belajar', 'Belajar']],
+      },
+      {
+        no: '05', name: 'Konsep Close', identitas: 'Jarak yang Mengecil', folder: 'crave-close', url: 'https://crave-close.vercel.app',
+        description: 'Biru malam, dimulai dari obrolan: dek 24 kartu percakapan, kesepakatan yang dicentang sebelum mencoba, dan dialog berdua.',
+        halaman: [['/percakapan', 'Kartu percakapan'], ['/jurnal', 'Jurnal']],
+      },
     ],
   },
 ];
+
+export const gambarEntri = (e) => `/images/entri/${e.folder}.webp`;

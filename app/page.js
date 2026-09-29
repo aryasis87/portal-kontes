@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Trophy, ArrowDown, MessageCircle, Gavel, Landmark, ChevronDown } from 'lucide-react';
-import { briefs } from './components/templates-data';
+import { Trophy, ArrowDown, ArrowUpRight, MessageCircle, Gavel, Landmark, ChevronDown } from 'lucide-react';
+import { briefs, gambarEntri } from './components/templates-data';
 
 const WA = 'https://wa.me/6281339908765?text=Halo%2C%20saya%20ingin%20mengadakan%20kontes%20desain%20web%20untuk%20brand%20saya';
 
@@ -33,7 +33,7 @@ export default function PortalKontes() {
             <a href="#carakerja" className="transition hover:text-kuningan">Cara Kerja</a>
             <a href="#tanya" className="transition hover:text-kuningan">Tanya Juri</a>
           </div>
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="rounded bg-arang px-5 py-2 text-sm font-bold text-galeri transition hover:bg-kuningan">
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="rounded bg-arang px-5 py-2 text-sm font-bold text-galeri transition hover:bg-kuningan-ink">
             Adakan Kontes
           </a>
         </nav>
@@ -51,7 +51,7 @@ export default function PortalKontes() {
           <p className="mx-auto mt-5 max-w-xl text-lg text-mutedk">
             Beginilah kontes desain bekerja: klien memberi brief, kami menjawab dengan beberapa konsep — dinilai berdampingan di dinding galeri ini.
           </p>
-          <a href="#galeri" className="mt-9 inline-flex items-center gap-2 rounded bg-arang px-8 py-3.5 font-display text-sm font-bold text-galeri transition hover:bg-kuningan">
+          <a href="#galeri" className="mt-9 inline-flex items-center gap-2 rounded bg-arang px-8 py-3.5 font-display text-sm font-bold text-galeri transition hover:bg-kuningan-ink">
             Masuki Galeri <ArrowDown size={15} />
           </a>
         </motion.div>
@@ -64,7 +64,7 @@ export default function PortalKontes() {
             <div key={b.id}>
               {/* Kartu brief */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-3xl border-l-4 border-kuningan bg-white p-6 shadow-sm md:p-8">
-                <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-kuningan"><Gavel size={14} /> Brief {String(bi + 1).padStart(2, '0')} — {b.klien}</p>
+                <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-kuningan-ink"><Gavel size={14} /> Brief {String(bi + 1).padStart(2, '0')} — {b.klien}</p>
                 <h2 className="mt-2 font-display text-3xl font-semibold">{b.proyek}</h2>
                 <p className="mt-2 text-mutedk">{b.deskripsi}</p>
               </motion.div>
@@ -80,11 +80,11 @@ export default function PortalKontes() {
                     transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
                     className="group text-center"
                   >
-                    <a href={e.url} target="_blank" rel="noopener noreferrer" aria-label={`Buka entri ${e.name}`} className="block">
+                    <a href={e.url} target="_blank" rel="noopener noreferrer" className="block">
                       <div className="frame transition-transform duration-300 group-hover:-translate-y-1.5">
                         <div className="frame-mat">
                           <div className="relative aspect-[16/11] overflow-hidden">
-                            <Image src={e.image} alt={`Entri ${e.name}`} fill sizes="(max-width:640px) 100vw, 25vw" className="object-cover object-top" priority={bi === 0 && i < 2} />
+                            <Image src={gambarEntri(e)} alt={`Beranda entri ${e.name} — ${e.identitas}`} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" className="object-cover object-top" priority={bi === 0 && i < 2} />
                           </div>
                         </div>
                       </div>
@@ -92,10 +92,20 @@ export default function PortalKontes() {
                     {/* Plakat */}
                     <div className="plakat mx-auto -mt-3 w-fit rounded px-4 py-1.5 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em]">Entri No. {e.no}</p>
-                      <p className="font-display text-sm font-semibold">{e.name}</p>
+                      <h3 className="font-display text-sm font-semibold">{e.name}</h3>
                     </div>
-                    <p className="mx-auto mt-3 max-w-[16rem] text-sm text-mutedk">{e.description}</p>
-                    <p className="mt-1.5 font-mono text-[11px] text-arang/40">/{e.folder}</p>
+                    <p className="mt-3 font-display text-lg italic text-kuningan-ink">“{e.identitas}”</p>
+                    <p className="mx-auto mt-1.5 max-w-[17rem] text-sm leading-relaxed text-mutedk">{e.description}</p>
+                    <ul className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-semibold" aria-label={`Halaman khas ${e.name}`}>
+                      {e.halaman.map(([path, label]) => (
+                        <li key={path}>
+                          <a href={e.url + path} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 text-arang underline decoration-kuningan/60 underline-offset-4 transition hover:text-kuningan-ink">
+                            {label}<ArrowUpRight size={12} aria-hidden="true" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-2 font-mono text-[11px] text-arang/70">/{e.folder}</p>
                   </motion.article>
                 ))}
               </div>
@@ -128,7 +138,7 @@ export default function PortalKontes() {
       <section id="tanya" className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
-            <p className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-kuningan"><Gavel size={14} /> Tanya Juri</p>
+            <p className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-kuningan-ink"><Gavel size={14} /> Tanya Juri</p>
             <h2 className="mt-2 font-display text-3xl font-semibold md:text-4xl">Sebelum palu <span className="italic text-kuningan">diketuk</span></h2>
           </div>
           <div className="mt-10 space-y-3">
@@ -158,7 +168,7 @@ export default function PortalKontes() {
           <span className="plakat mx-auto grid h-14 w-14 place-items-center rounded-full"><Trophy size={22} /></span>
           <h2 className="mt-6 font-display text-3xl font-semibold leading-tight md:text-4xl">Brand-mu layak diperebutkan.</h2>
           <p className="mt-3 text-galeri/60">Adakan kontes untuk brand-mu — dapatkan beberapa konsep website nyata, pilih yang paling memenangkan hatimu.</p>
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded bg-kuningan px-8 py-4 font-display text-sm font-bold text-white transition hover:scale-[1.03] active:scale-95">
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded bg-kuningan-ink px-8 py-4 font-display text-sm font-bold text-white transition hover:scale-[1.03] active:scale-95">
             <MessageCircle size={16} /> Mulai Kontesmu
           </a>
         </motion.div>
@@ -189,7 +199,7 @@ export default function PortalKontes() {
             </ul>
           </div>
         </div>
-        <p className="mt-10 border-t border-galeri/10 pt-5 text-center text-xs text-galeri/40">
+        <p className="mt-10 border-t border-galeri/10 pt-5 text-center text-xs text-galeri/70">
           © {new Date().getFullYear()} PortalKontes · bagian dari PintuWeb — biar karya yang bicara.
         </p>
       </footer>

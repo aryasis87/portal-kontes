@@ -7,7 +7,8 @@
   --color-galeri: #f2f0eb;
   --color-arang: #23211d;
   --color-kuningan: #a8852e;
-  --color-mutedk: #77726a;
+  --color-kuningan-ink: #7d6220; /* kuningan untuk teks kecil, lolos AA di galeri & putih */
+  --color-mutedk: #6b665e;
 }
 
 html { scroll-behavior: smooth; }
@@ -28,7 +29,7 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
 
 /* Plakat kuningan */
 .plakat {
-  background: linear-gradient(160deg, #cfa94d, #a8852e 60%, #8a6c22);
+  background: linear-gradient(160deg, #b8923a, #8f6f22 60%, #6f5518);
   color: #fff8e8; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 8px -3px rgba(138, 108, 34, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
