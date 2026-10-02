@@ -10,7 +10,7 @@ const WA = 'https://wa.me/6281339908765?text=Halo%2C%20saya%20ingin%20mengadakan
 const TANYA = [
   { q: 'Apa untungnya kontes dibanding pesan satu desain?', a: 'Kamu melihat beberapa interpretasi nyata atas brief yang sama — bukan satu taruhan. Konsep yang menang adalah yang benar-benar paling pas di matamu, bukan sekadar yang pertama jadi.' },
   { q: 'Berapa konsep yang saya terima?', a: 'Umumnya 3–5 konsep website utuh yang bisa diklik dan dijelajahi, bukan sekadar gambar mockup. Jumlah pastinya menyesuaikan skala brief dan kesepakatan di awal.' },
-  { q: 'Berapa lama prosesnya?', a: 'Brief singkat berjalan sekitar 5–10 hari kerja dari brief final sampai semua entri siap dinilai. Setelah kamu memilih juara, pemolesan final memakan 2–3 hari.' },
+  { q: 'Berapa lama prosesnya?', a: 'Tergantung panjang brief dan jumlah konsep yang kamu minta. Sebelum mulai, kami kirim jadwalnya: kapan semua entri siap dinilai, dan berapa lama pemolesan setelah kamu memilih juara.' },
   { q: 'Bagaimana jika tidak ada konsep yang saya suka?', a: 'Feedback-mu jadi arah revisi: konsep terdekat kami rombak sesuai catatanmu. Prinsip kami sederhana — kontes selesai ketika ada karya yang memenangkan hatimu.' },
   { q: 'Konsep yang kalah jadi milik siapa?', a: 'Konsep juara beserta source code menjadi milikmu penuh. Konsep lain tetap arsip galeri kami — bisa kamu tebus terpisah jika ternyata ingin memakainya juga.' },
 ];
@@ -195,7 +195,7 @@ export default function PortalKontes() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-kuningan">Hubungi</p>
             <ul className="mt-3 space-y-2">
               <li><a href={WA} target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">WhatsApp +62 813 3990 8765</a></li>
-              <li><a href="https://pintuweb.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">pintuweb.com</a></li>
+              <li><a href="https://www.pintuweb.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">pintuweb.com</a></li>
             </ul>
           </div>
         </div>

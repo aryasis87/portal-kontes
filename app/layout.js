@@ -4,7 +4,7 @@ import { Zilla_Slab, Inter } from 'next/font/google';
 const zilla = Zilla_Slab({ subsets: ['latin'], variable: '--font-zilla', weight: ['500', '600', '700'] });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalKontes","description":"Galeri entri kontes desain web","url":"https://portal-kontes.vercel.app","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://pintuweb.com"}};
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalKontes","description":"Galeri entri kontes desain web","url":"https://portal-kontes.vercel.app","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.com"}};
 
 export const metadata = {
   metadataBase: new URL("https://portal-kontes.vercel.app"),
@@ -40,8 +40,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
-      <body className={`${zilla.variable} ${inter.variable} antialiased`}>
+    <html lang="id" className={`${zilla.variable} ${inter.variable}`}>
+      <body className="antialiased">
         <main>{children}</main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
         </body>
