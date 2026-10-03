@@ -94,6 +94,13 @@ export default function PortalKontes() {
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em]">Entri No. {e.no}</p>
                       <h3 className="font-display text-sm font-semibold">{e.name}</h3>
                     </div>
+                    {/* Titik merah: penanda karya terjual di galeri */}
+                    {e.terjual > 0 && (
+                      <p className="mt-3 flex items-center justify-center gap-1.5 text-xs font-semibold text-arang">
+                        <span className="h-2.5 w-2.5 rounded-full bg-[#c22f2f] ring-2 ring-white" aria-hidden="true" />
+                        {e.terjual} terjual
+                      </p>
+                    )}
                     <p className="mt-3 font-display text-lg italic text-kuningan-ink">“{e.identitas}”</p>
                     <p className="mx-auto mt-1.5 max-w-[17rem] text-sm leading-relaxed text-mutedk">{e.description}</p>
                     <ul className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-semibold" aria-label={`Halaman khas ${e.name}`}>
