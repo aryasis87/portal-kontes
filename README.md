@@ -2,7 +2,7 @@
 
 PortalKontes: galeri entri kontes desain web — beberapa konsep untuk satu brief, dinilai berdampingan seperti di ruang juri.
 
-**Demo live:** https://portal-kontes.vercel.app
+**Demo live:** https://www.pintuweb.com/kontes-desain
 
 ![Tangkapan layar PortalKontes](public/og.jpg)
 
