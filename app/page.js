@@ -10,7 +10,8 @@ const WA = 'https://wa.me/6281339908765?text=Halo%2C%20saya%20ingin%20mengadakan
 const TANYA = [
   { q: 'Apa untungnya kontes dibanding pesan satu desain?', a: 'Kamu melihat beberapa interpretasi nyata atas brief yang sama — bukan satu taruhan. Konsep yang menang adalah yang benar-benar paling pas di matamu, bukan sekadar yang pertama jadi.' },
   { q: 'Berapa konsep yang saya terima?', a: 'Umumnya 3–5 konsep website utuh yang bisa diklik dan dijelajahi, bukan sekadar gambar mockup. Jumlah pastinya menyesuaikan skala brief dan kesepakatan di awal.' },
-  { q: 'Berapa lama prosesnya?', a: 'Tergantung panjang brief dan jumlah konsep yang kamu minta. Sebelum mulai, kami kirim jadwalnya: kapan semua entri siap dinilai, dan berapa lama pemolesan setelah kamu memilih juara.' },
+  { q: 'Berapa biayanya?', a: 'Paket Konsep Desain Website PintuWeb Rp2,5 juta–Rp5 juta untuk 3–5 konsep live atas satu brief. Konsep juara bisa langsung dilanjutkan ke paket website; angka pastinya tertulis di penawaran sebelum mulai.' },
+  { q: 'Berapa lama prosesnya?', a: 'Umumnya 1–2 minggu sampai semua konsep siap dinilai, tergantung panjang brief dan jumlah konsep. Sebelum mulai, kami kirim jadwalnya, termasuk berapa lama pemolesan setelah kamu memilih juara.' },
   { q: 'Bagaimana jika tidak ada konsep yang saya suka?', a: 'Feedback-mu jadi arah revisi: konsep terdekat kami rombak sesuai catatanmu. Prinsip kami sederhana — kontes selesai ketika ada karya yang memenangkan hatimu.' },
   { q: 'Konsep yang kalah jadi milik siapa?', a: 'Konsep juara beserta source code menjadi milikmu penuh. Konsep lain tetap arsip galeri kami — bisa kamu tebus terpisah jika ternyata ingin memakainya juga.' },
 ];
