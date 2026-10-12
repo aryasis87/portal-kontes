@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 import { Trophy, ArrowDown, ArrowUpRight, MessageCircle, Gavel, Landmark, ChevronDown } from 'lucide-react';
 import { briefs, gambarEntri } from './components/templates-data';
 
-const WA = 'https://wa.me/6281339908765?text=Halo%2C%20saya%20ingin%20mengadakan%20kontes%20desain%20web%20untuk%20brand%20saya';
+const WA = 'https://wa.me/6285190931399?text=Halo%2C%20saya%20ingin%20mengadakan%20kontes%20desain%20web%20untuk%20brand%20saya';
 
 const TANYA = [
   { q: 'Apa untungnya kontes dibanding pesan satu desain?', a: 'Kamu melihat beberapa interpretasi nyata atas brief yang sama — bukan satu taruhan. Konsep yang menang adalah yang benar-benar paling pas di matamu, bukan sekadar yang pertama jadi.' },
   { q: 'Berapa konsep yang saya terima?', a: 'Umumnya 3–5 konsep website utuh yang bisa diklik dan dijelajahi, bukan sekadar gambar mockup. Jumlah pastinya menyesuaikan skala brief dan kesepakatan di awal.' },
-  { q: 'Berapa biayanya?', a: 'Paket Konsep Desain Website PintuWeb Rp2,5 juta–Rp5 juta untuk 3–5 konsep live atas satu brief. Konsep juara bisa langsung dilanjutkan ke paket website; angka pastinya tertulis di penawaran sebelum mulai.' },
+  { q: 'Berapa biayanya?', a: 'Paket Konsep Desain Website PintuWeb Rp1,25 juta–Rp2,5 juta untuk 3–5 konsep live atas satu brief. Konsep juara bisa langsung dilanjutkan ke paket website; angka pastinya tertulis di penawaran sebelum mulai.' },
   { q: 'Berapa lama prosesnya?', a: 'Umumnya 1–2 minggu sampai semua konsep siap dinilai, tergantung panjang brief dan jumlah konsep. Sebelum mulai, kami kirim jadwalnya, termasuk berapa lama pemolesan setelah kamu memilih juara.' },
   { q: 'Bagaimana jika tidak ada konsep yang saya suka?', a: 'Feedback-mu jadi arah revisi: konsep terdekat kami rombak sesuai catatanmu. Prinsip kami sederhana — kontes selesai ketika ada karya yang memenangkan hatimu.' },
   { q: 'Konsep yang kalah jadi milik siapa?', a: 'Konsep juara beserta source code menjadi milikmu penuh. Konsep lain tetap arsip galeri kami — bisa kamu tebus terpisah jika ternyata ingin memakainya juga.' },
@@ -210,7 +210,7 @@ export default function PortalKontes() {
           <div className="text-sm">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-kuningan">Hubungi</p>
             <ul className="mt-3 space-y-2">
-              <li><a href={WA} target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">WhatsApp +62 813 3990 8765</a></li>
+              <li><a href={WA} target="_blank" rel="noopener noreferrer" className="transition hover:text-galeri">WhatsApp +62 851 9093 1399</a></li>
               <li><a href="https://www.pintuweb.com" className="transition hover:text-galeri">pintuweb.com</a></li>
             </ul>
           </div>
